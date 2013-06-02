@@ -205,7 +205,7 @@ class Cluster():
         marks = []
         for node in self.nodes.values():
             if not node.is_running():
-                p = node.start(update_pid=False)
+                p = node.start(update_pid=True)
                 started.append((node, p))
                 # ugly? indeed!
                 while not os.path.exists(node.logfilename()):
